@@ -9,9 +9,15 @@ public class DynamicStringList implements StringList {
    * @throws IndexOutOfBoundsException if the index is out of range (index < 0 or index >= size()).
    */
     public String get(int index)
-    {
+    {        
 
-        return "";
+        if(index < 0 || index >= list.length)
+        {
+            throw new IndexOutOfBoundsException("Index out of bounds");
+        }
+
+        return list[index];
+
     }
 
       /**
