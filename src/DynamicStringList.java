@@ -1,5 +1,6 @@
 public class DynamicStringList implements StringList {
-    
+    String[] list = new String[10];
+    int endOfList = 0;
       /**
    * Retrieves the string at the specified index in the list.
    *
@@ -9,6 +10,7 @@ public class DynamicStringList implements StringList {
    */
     public String get(int index)
     {
+
         return "";
     }
 
@@ -31,7 +33,17 @@ public class DynamicStringList implements StringList {
    */
     public void add(String value)
     {
-
+        if(endOfList == list.length+1){
+            String[] newList = new String[list.length * 2];
+            for(int i=0; i<list.length; i++){
+                newList[i] = list[i];
+            }
+            newList[list.length] = value;
+            
+        }else{
+        list[endOfList] = value;
+        endOfList++;
+        }
     }
 
     /**
