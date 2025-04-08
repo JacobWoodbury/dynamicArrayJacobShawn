@@ -27,7 +27,7 @@ public class DynamicStringList implements StringList {
    * @param value the new value to set at the specified index.
    * @throws IndexOutOfBoundsException if the index is out of range (index < 0 or index >= size()).
    */
-    public void set(int index)
+    public void set(int index, String value)
     {
 
     }
@@ -39,7 +39,7 @@ public class DynamicStringList implements StringList {
    */
     public void add(String value)
     {
-        if(endOfList == list.length+1){
+        if(endOfList == list.length){
             String[] newList = new String[list.length * 2];
             for(int i=0; i<list.length; i++){
                 newList[i] = list[i];
@@ -71,7 +71,7 @@ public class DynamicStringList implements StringList {
      */
     public int size()
     {
-        return 0;
+        return endOfList;
     }
   
     /**
