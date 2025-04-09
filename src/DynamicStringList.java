@@ -26,7 +26,11 @@ public class DynamicStringList implements StringList {
    */
     public void set(int index, String value)
     {
-        
+        if(index < 0 || index >= list.length)
+        {
+            throw new IndexOutOfBoundsException("Index out of bounds");
+        }
+        list[index] = value;
     }
 
   /**
@@ -56,9 +60,17 @@ public class DynamicStringList implements StringList {
      * @return the string that was removed.
      * @throws IndexOutOfBoundsException if the index is out of range (index < 0 or index >= size()).
      */
-    public String remove(int index)
-    {
-        return "";
+    public String remove(int index){
+        if(index < 0 || index >= list.length)
+        {
+            throw new IndexOutOfBoundsException("Index out of bounds");
+        }
+        String toRemove = list[index];
+        for (int i = index; i < endOfList; i++) {
+            list[i] = list[i+1];
+        }
+        endOfList--;
+        return toRemove;
     }
   
     /**
@@ -78,7 +90,7 @@ public class DynamicStringList implements StringList {
      */
     public int capacity()
     {
-        return 0;
+        return list.length;
     }
   
 }
