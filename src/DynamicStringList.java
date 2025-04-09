@@ -40,13 +40,15 @@ public class DynamicStringList implements StringList {
    */
     public void add(String value)
     {
-        if(endOfList == list.length){
+        if(endOfList == list.length-1){
             String[] newList = new String[list.length * 2];
             for(int i=0; i<list.length; i++){
                 newList[i] = list[i];
+                System.out.println(list[i]);
             }
-            newList[list.length] = value;
-            
+            newList[endOfList] = value;
+            list = newList;
+            endOfList++;
         }else{
         list[endOfList] = value;
         endOfList++;
