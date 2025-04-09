@@ -10,14 +10,11 @@ public class DynamicStringList implements StringList {
    */
     public String get(int index)
     {        
-
         if(index < 0 || index >= list.length)
         {
             throw new IndexOutOfBoundsException("Index out of bounds");
         }
-
         return list[index];
-
     }
 
       /**
@@ -29,7 +26,7 @@ public class DynamicStringList implements StringList {
    */
     public void set(int index, String value)
     {
-
+        
     }
 
   /**
