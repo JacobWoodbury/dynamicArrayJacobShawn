@@ -84,6 +84,28 @@ public void remove_TestNormalRemoveFirst(){
 }
 
 @Test
+public void remove_TestNormalDecrementingSize(){
+    StringList list = new DynamicStringList();
+    for(int i=0; i<=5; i++){
+        list.add("hi" + i);
+    }    
+
+    list.remove(3);
+    assertEquals(5, list.size());
+}
+
+@Test
+public void remove_TestNormalStringIsRemoved(){
+    StringList list = new DynamicStringList();
+    for(int i=0; i<=5; i++){
+        list.add("hi" + i);
+    }    
+
+    list.remove(3);
+    assertEquals("hi4", list.get(3));
+}
+
+@Test
 public void set_TestNormalFirstIndex(){
     StringList list = new DynamicStringList();
     for(int i=0; i<=5; i++){
